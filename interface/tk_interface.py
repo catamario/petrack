@@ -13,7 +13,7 @@ header_label = Label(header, text="People & Events Tracker", bg='#282828', fg='#
 header_label.pack(pady=20)
 
 welcome_frame = Frame(window, bg="#333333")  # Frame transparent (aceeași culoare ca fundalul)
-welcome_frame.pack(pady=20)
+welcome_frame.pack(pady=50)
 
 # Primul Label pentru cuvântul "Welcome", cu stil bold
 welcome_label = Label(
@@ -40,11 +40,11 @@ rest_of_text_label.pack()
 #icon = PhotoImage(file='logo.png')
 #window.iconphoto(True, icon)
 
-buttons_div = Frame(window, bg="#333333", height=300)
-buttons_div.pack(pady=10, fill="x")
+buttons_div = Frame(window, bg="#333333", height=60)
+buttons_div.pack(pady=50, fill="x")
 
-buttons_frame = Frame(buttons_div, bg="#FFFFFF")  # Frame nou pentru butoane
-buttons_frame.grid(sticky="ew")
+buttons_frame = Frame(buttons_div, bg="#333333")  # Frame nou pentru butoane
+buttons_frame.place(relx=0.5, anchor="n")
 
 # Buton People
 people_button = Button(
@@ -52,7 +52,7 @@ people_button = Button(
     text="People",
     bg="#66BB6A",  # Verde deschis
     fg="white",
-    font=("Arial", 12, "bold"),
+    font=("Arial", 20, "bold"),
     width=10,
     relief="flat"
 )
@@ -64,11 +64,32 @@ events_button = Button(
     text="Events",
     bg="#66BB6A",
     fg="white",
-    font=("Arial", 12, "bold"),
+    font=("Arial", 20, "bold"),
     width=10,
     relief="flat"
 )
 events_button.grid(row=0, column=1, padx=10)
+
+
+
+
+
+buttons_div_2 = Frame(window, bg="#333333", height=60)
+buttons_div_2.pack(pady=5, fill="x")
+
+buttons_frame_2 = Frame(buttons_div_2, bg="#333333")  # Frame nou pentru butoane
+buttons_frame_2.place(relx=0.5, anchor="n")
+
+manage_button = Button(
+    buttons_frame_2,
+    text="Manage All",
+    bg="#66BB6A",  # Verde deschis
+    fg="white",
+    font=("Arial", 20, "bold"),
+    width=10,
+    relief="flat"
+)
+manage_button.grid()
 
 
 window.mainloop()
