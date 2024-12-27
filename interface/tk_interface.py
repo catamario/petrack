@@ -23,6 +23,9 @@ class App(Tk):
         self.resizable(False, False)
         self.config(background='#333333')
 
+        self.all_persoane = []
+        self.all_events = []
+
         # Container pentru pagini
         self.container = Frame(self, bg="#333333")
         self.container.pack(fill="both", expand=True)
@@ -30,10 +33,19 @@ class App(Tk):
         self.frames = {}
 
         # Adăugăm paginile
-        for Page in (MainPage, PeoplePage, EventsPage, Add_People, Add_Events, Edit_People, Edit_Events, Delete_Events, Delete_People,
+        for Page in (MainPage, PeoplePage, EventsPage, Add_People, Add_Events, Edit_People, Edit_Events, Delete_Events,
+                     Delete_People,
                      Search_Events, Search_People, List_Events, List_People):
             page_name = Page.__name__
-            frame = Page(parent=self.container, controller=self)
+
+            # Transmitem lista `all_persoane` și `all_events` doar către paginile care au nevoie
+            if Page == Add_People or Page == List_People:
+                frame = Page(parent=self.container, controller=self, all_persoane=self.all_persoane)
+            #TODO elif Page in (Add_Events, Edit_Events, Delete_Events, Search_Events, List_Events):
+                #TODO frame = Page(parent=self.container, controller=self, all_events=self.all_events)
+            else:
+                frame = Page(parent=self.container, controller=self)
+
             self.frames[page_name] = frame
 
         self.show_frame("MainPage")  # Afișăm MainPage la început
