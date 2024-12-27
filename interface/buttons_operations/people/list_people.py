@@ -1,6 +1,6 @@
 from tkinter import *
 
-class Add_People(Frame):
+class List_People(Frame):
     def __init__(self, parent, controller):
         super().__init__(parent, bg="#333333")
         self.controller = controller
@@ -15,7 +15,7 @@ class Add_People(Frame):
 
         # Content
         content_label = Label(
-            self, text="ADD PEOPLE", bg="#333333", fg="#BDFDC0", font=("Arial", 20, "bold"), justify="center"
+            self, text="LIST PEOPLE", bg="#333333", fg="#BDFDC0", font=("Arial", 20, "bold"), justify="center"
         )
         content_label.pack(pady=30)
 
@@ -23,34 +23,21 @@ class Add_People(Frame):
         div_Form = Frame(self, bg="#333333", height=250)
         div_Form.pack(pady=5, fill="x")
         form = Frame(div_Form, bg="#333333", height=250)
-        form.place(anchor = "e", relx="0.9", rely="0.5")
+        form.place(anchor = "n", relx="0.5")
 
-        # ID
-        id_label = Label(form, text="id:", font=("Arial", 20), fg="#FFFFFF", bg="#333333")
-        id_label.grid(row=0, column=0, padx=10, pady=5, sticky="e")
-        id_entry = Entry(form, font=("Arial", 16), bg="#DDDDDD", fg="#000000")
-        id_entry.grid(row=0, column=1, padx=10, pady=5)
+        #LIST
+        output_label = Label(form, font=("Arial", 16), bg="#DDDDDD", fg="#000000", text="lista", height=8)
+        output_label.pack(fill="x")
 
-        # Nume
-        name_label = Label(form, text="name:", font=("Arial", 20), fg="#FFFFFF", bg="#333333")
-        name_label.grid(row=1, column=0, padx=10, pady=5, sticky="e")
-        name_entry = Entry(form, font=("Arial", 16), bg="#DDDDDD", fg="#000000")
-        name_entry.grid(row=1, column=1, padx=10, pady=5)
-
-        # Adress
-        address_label = Label(form, text="adress:", font=("Arial", 20), fg="#FFFFFF", bg="#333333")
-        address_label.grid(row=2, column=0, padx=10, pady=5, sticky="e")
-        address_entry = Entry(form, font=("Arial", 16), bg="#DDDDDD", fg="#000000")
-        address_entry.grid(row=2, column=1, padx=10, pady=5)
 
         # Mesaj de confirmare
         confirmation_label = Label(form, text="MESAJ DE CONFIRMARE\nROSU/VERDE", font=("Arial", 14, "bold"), fg="#FF0000", bg="#333333")
-        confirmation_label.grid(row=3, column=1, padx=10, pady=5)
+        confirmation_label.pack()
 
         # ADD BUTTON
         add_button = Button(
             self,
-            text="ADD",
+            text="LIST",
             bg="#66BB6A",
             fg="white",
             font=("Arial", 14, "bold"),
@@ -68,6 +55,6 @@ class Add_People(Frame):
             font=("Arial", 14, "bold"),
             width=15,height=2,
             relief="flat",
-            command=lambda: controller.show_frame("MainPage")  # Navighează înapoi la MainPage
+            command=lambda: controller.show_frame("PeoplePage")  # Navighează înapoi la MainPage
         )
         back_button.pack(pady=10)

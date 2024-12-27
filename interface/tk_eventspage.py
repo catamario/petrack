@@ -33,6 +33,7 @@ class EventsPage(Frame):
             font=("Arial", 20, "bold"),
             width=7,
             relief="flat",
+            command=lambda: controller.show_frame("Add_Events")
         )
         add_button.grid(row=0, column=0, padx=10)
 
@@ -44,6 +45,7 @@ class EventsPage(Frame):
             font=("Arial", 20, "bold"),
             width=7,
             relief="flat",
+            command=lambda: controller.show_frame("Edit_Events")
         )
         edit_button.grid(row=0, column=1, padx=10)
 
@@ -55,6 +57,7 @@ class EventsPage(Frame):
             font=("Arial", 20, "bold"),
             width=7,
             relief="flat",
+            command=lambda: controller.show_frame("Delete_Events")
         )
         delete_button.grid(row=0, column=2, padx=10)
 
@@ -71,7 +74,7 @@ class EventsPage(Frame):
             font=("Arial", 20, "bold"),
             width=7,
             relief="flat",
-            command=lambda: print("Navighează la Manage All")
+            command=lambda: controller.show_frame("Search_Events")
         )
         search_button.grid(row=0, column=0, padx=10)
 
@@ -83,7 +86,7 @@ class EventsPage(Frame):
             font=("Arial", 20, "bold"),
             width=7,
             relief="flat",
-            command=lambda: print("Navighează la Manage All")
+            command=lambda: controller.show_frame("List_Events")
         )
         list_button.grid(row=0, column=1, padx=10)
 

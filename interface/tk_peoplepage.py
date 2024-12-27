@@ -46,6 +46,7 @@ class PeoplePage(Frame):
             font=("Arial", 20, "bold"),
             width=7,
             relief="flat",
+            command=lambda: controller.show_frame("Edit_People")
         )
         edit_button.grid(row=0, column=1, padx=10)
 
@@ -57,6 +58,7 @@ class PeoplePage(Frame):
             font=("Arial", 20, "bold"),
             width=7,
             relief="flat",
+            command=lambda: controller.show_frame("Delete_People")
         )
         delete_button.grid(row=0, column=2, padx=10)
 
@@ -73,7 +75,7 @@ class PeoplePage(Frame):
             font=("Arial", 20, "bold"),
             width=7,
             relief="flat",
-            command=lambda: print("Navighează la Manage All")
+            command=lambda: controller.show_frame("Search_People")
         )
         search_button.grid(row=0, column=0, padx=10)
 
@@ -85,7 +87,7 @@ class PeoplePage(Frame):
             font=("Arial", 20, "bold"),
             width=7,
             relief="flat",
-            command=lambda: print("Navighează la Manage All")
+            command=lambda: controller.show_frame("List_People")
         )
         list_button.grid(row=0, column=1, padx=10)
 

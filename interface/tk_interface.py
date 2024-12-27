@@ -1,8 +1,19 @@
 from tkinter import *
+
+from interface.buttons_operations.events.delete_events import Delete_Events
 from tk_mainpage import MainPage
 from tk_peoplepage import PeoplePage
 from tk_eventspage import EventsPage
-from buttons_operations.add_people import Add_People
+from interface.buttons_operations.people.add_people import Add_People
+from interface.buttons_operations.events.add_events import Add_Events
+from interface.buttons_operations.people.edit_people import Edit_People
+from interface.buttons_operations.events.edit_events import Edit_Events
+from interface.buttons_operations.events.delete_events import Delete_Events
+from interface.buttons_operations.people.delete_people import Delete_People
+from interface.buttons_operations.people.search_people import Search_People
+from interface.buttons_operations.events.search_events import Search_Events
+from interface.buttons_operations.people.list_people import List_People
+from interface.buttons_operations.events.list_events import List_Events
 
 class App(Tk):
     def __init__(self):
@@ -19,7 +30,8 @@ class App(Tk):
         self.frames = {}
 
         # Adăugăm paginile
-        for Page in (MainPage, PeoplePage, EventsPage, Add_People):
+        for Page in (MainPage, PeoplePage, EventsPage, Add_People, Add_Events, Edit_People, Edit_Events, Delete_Events, Delete_People,
+                     Search_Events, Search_People, List_Events, List_People):
             page_name = Page.__name__
             frame = Page(parent=self.container, controller=self)
             self.frames[page_name] = frame
