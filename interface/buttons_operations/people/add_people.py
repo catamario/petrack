@@ -91,3 +91,6 @@ class Add_People(Frame):
 
     def reset_page(self):
         self.confirmation_label.config(text="CONFIRMATION MESSAGE", fg="#FF0000")
+        self.id_entry.delete(0, END)
+        self.name_entry.delete(0, END)
+        self.address_entry.delete(0, END)

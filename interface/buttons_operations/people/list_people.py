@@ -73,7 +73,6 @@ class List_People(Frame):
             self.confirmation_label.config(text="The list could not be displayed", fg="#FF0000")
 
         nume_list = get_nume(self.all_persoane)
-        # Setăm textul în output_label
         self.output_label.config(text="\n".join(nume_list))
 
     def reset_page(self):
