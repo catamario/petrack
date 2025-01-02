@@ -39,10 +39,12 @@ class App(Tk):
             page_name = Page.__name__
 
             # Transmitem lista `all_persoane` și `all_events` doar către paginile care au nevoie
-            if Page == Add_People or Page == List_People or Page == Search_People or Page == Delete_People or Page == Edit_People:
+            if Page in (Add_People, List_People, Search_People, Delete_People, Edit_People):
                 frame = Page(parent=self.container, controller=self, all_persoane=self.all_persoane)
             #TODO elif Page in (Add_Events, Edit_Events, Delete_Events, Search_Events, List_Events):
                 #TODO frame = Page(parent=self.container, controller=self, all_events=self.all_events)
+            elif Page == Add_Events:
+                frame = Page(parent=self.container, controller=self, all_events=self.all_events)
             else:
                 frame = Page(parent=self.container, controller=self)
 
